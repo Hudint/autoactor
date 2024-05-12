@@ -1,30 +1,12 @@
-
-
 export default class Utils {
-    private constructor() {}
-
-    static isProductionBuild() {
-        return process.env.NODE_ENV === 'production';
+    private constructor() {
     }
 
-    static present<T>(value: T | undefined | null, callback: (value: T)=>void, notPresentCallback?: ()=>void){
-        if(value) callback(value)
-        else if(notPresentCallback) notPresentCallback();
-    }
-
-    static matches(input: string, regex: RegExp) {
-        let matches = [];
-        let current: RegExpMatchArray | null;
-        while (current = regex.exec(input)) {
-            matches.push(current);
+    static groupArray<T>(arr: T[], groupSize: number) {
+        let result: T[][] = [];
+        for (let i = 0; i < arr.length; i += groupSize) {
+            result.push(arr.slice(i, i + groupSize))
         }
-        return matches;
-    }
-
-    static getEnv(key: string): string {
-        const value = process.env[key]
-        if (value)
-            return value;
-        throw new Error(`${key} is not in env variables!`)
+        return result
     }
 }

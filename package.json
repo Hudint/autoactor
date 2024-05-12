@@ -1,21 +1,24 @@
 {
-  "name": "default",
-  "version": "0.0.1",
-  "description": "default typescript project",
+  "name": "autoactor",
+  "version": "2.3.0",
+  "description": "Automatic interact with shell given some rules",
   "main": "dist/index.js",
   "scripts": {
     "test": "nodemon src/index.ts",
     "build": "tsc"
   },
+  "bin": {
+    "autoactor": "./dist/index.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hudint/default.git"
+    "url": "git+https://github.com/Hudint/autoactor.git"
   },
   "author": "Hudint <Finn Weigand>",
   "bugs": {
-    "url": "https://github.com/Hudint/default/issues"
+    "url": "https://github.com/Hudint/autoactor/issues"
   },
-  "homepage": "https://github.com/Hudint/default#readme",
+  "homepage": "https://github.com/Hudint/autoactor#readme",
   "devDependencies": {
     "@types/node": "^20.12.7",
     "nodemon": "^3.1.0",
